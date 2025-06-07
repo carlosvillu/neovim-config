@@ -1,4 +1,4 @@
-# Carlos Villullas's NeoVim Configuration
+# Carlosvillu's NeoVim Configuration
 
 A complete NeoVim configuration with a focus on development productivity, UI enhancements, and efficient keymappings. This setup provides a modern code editing experience with LSP support, autocompletion, formatting, and much more.
 

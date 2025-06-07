@@ -72,3 +72,24 @@ keymap.set("v", ">", ">gv", { desc = "Shift right and reselect" })
 -- Replace word under cursor, globally, with confirmation
 keymap.set("n", "<Leader>k", ":%s/\\<<C-r><C-w>\\>//gc<Left><Left><Left>", { desc = "Replace word under cursor" })
 keymap.set("v", "<Leader>k", 'y :%s/<C-r>"//gc<Left><Left><Left>', { desc = "Replace selected text" })
+
+-- Copiar rutas de archivo al portapapeles del sistema
+keymap.set("n", "<leader>cp", function()
+	vim.fn.setreg("+", vim.fn.expand("%:p"))
+	print("Ruta completa copiada: " .. vim.fn.expand("%:p"))
+end, { desc = "Copy full file path to clipboard" })
+
+keymap.set("n", "<leader>cr", function()
+	vim.fn.setreg("+", vim.fn.expand("%"))
+	print("Ruta relativa copiada: " .. vim.fn.expand("%"))
+end, { desc = "Copy relative file path to clipboard" })
+
+keymap.set("n", "<leader>cf", function()
+	vim.fn.setreg("+", vim.fn.expand("%:t"))
+	print("Nombre de archivo copiado: " .. vim.fn.expand("%:t"))
+end, { desc = "Copy filename to clipboard" })
+
+keymap.set("n", "<leader>cd", function()
+	vim.fn.setreg("+", vim.fn.expand("%:h"))
+	print("Directorio copiado: " .. vim.fn.expand("%:h"))
+end, { desc = "Copy file directory to clipboard" })
